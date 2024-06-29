@@ -1,6 +1,10 @@
+CREATE USER 'practica'@'localhost' IDENTIFIED BY 'practica';
+
 DROP SCHEMA IF EXISTS utpl;
 
 CREATE SCHEMA utpl;
+
+GRANT ALL PRIVILEGES ON utpl.* TO 'practica'@'localhost';
 
 USE utpl;
 
@@ -187,4 +191,3 @@ ALTER TABLE subzona
 ALTER TABLE provincia
     ADD CONSTRAINT zona_fkv2 FOREIGN KEY (zona_codigo)
         REFERENCES zona (codigo);
-
